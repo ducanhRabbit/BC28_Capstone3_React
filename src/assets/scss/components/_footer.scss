@@ -1,0 +1,40 @@
+@import "../theme/variables";
+
+footer {
+  .footer_bg {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 8px $bg-c2-dark;
+    background-color: $bg-c4-dark;
+    .footer_content {
+      .col-item {
+        h4 {
+          font-weight: 600;
+        }
+        .tags_list {
+          padding: 0;
+          .tag {
+            list-style: none;
+            a {
+              color: $text-c1-dark;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    background-color: $bg-c1-secondary;
+    padding: 12px 0;
+    .content {
+      i {
+
+      }
+      span {
+        font-weight: 500;
+        line-height: 1;
+      }
+    }
+  }
+}

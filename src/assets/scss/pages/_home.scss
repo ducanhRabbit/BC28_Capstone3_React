@@ -1,0 +1,51 @@
+// Slider CSS
+.slide-wrap{
+    max-height: 500px;
+    .slide-left{
+        width: 60%;
+        .img-product{
+            overflow: hidden;
+            text-align: center;
+            img{
+                display: inline-block;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .slide-right{
+        flex: 1;
+        .product-detail{
+            h3{
+                font-size: $text-4xl ;
+                font-weight: 600;
+                color: $text-c1-dark;
+            }
+            p{
+                line-height: 1.6;
+                font-size: $text-2xl;
+                font-weight: 400;
+                margin-bottom: 10px;
+
+            }
+            a{
+                padding: 13px 35px;
+                border-radius: 5px;
+                span{
+                    font-size: $text-2xl;
+                    
+                }
+            }
+        }
+    }
+}
+
+// Feature Section
+.feature{
+    .title{
+        text-align: center;
+        font-size: $text-4xl;
+        font-weight: 600;
+        color: $text-c1-dark;
+    }
+}

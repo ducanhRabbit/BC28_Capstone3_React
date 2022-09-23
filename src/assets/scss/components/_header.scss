@@ -13,23 +13,54 @@ header{
        .user-login{
         
         a{
+            position: relative;
             color: $text-c1-light;
             font-size: 1rem;
             font-weight: 500;
-            i{
+            text-decoration: none;
+            svg{
+                position: relative;
+                font-size: 1.4rem;
+            }
+            .cart-icon{
 
             }
+            .cart-badge{
+                right: -15px;
+                top: -10px;
+                position: absolute;
+                padding: 0px 8px;
+                border-radius: 12px;
+                background-color: red;
+                font-weight: 600;
+                font-size: $text-xs;
+            }
             p{
-
+                line-height: 1;
             }
         }
        } 
     }
     .navigation{
-        .nav-wrap{
+        .nav_wrap{
             a{
+                position: relative;
+                text-decoration: none;
+                color: $text-c1-dark;
 
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    border: 1px solid $bg-c1-dark;
+                    bottom: 0;
+                    display: none;
+                }
+                &.active_nav::before{
+                    display: block;
+                }
             }
+           
         }
     }
 }
