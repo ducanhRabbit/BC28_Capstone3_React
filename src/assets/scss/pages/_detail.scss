@@ -1,0 +1,84 @@
+.productDetail {
+    padding: 58px 25px 39px;
+    gap: 128px;
+    align-items: flex-start;
+
+    .productDetail__img {
+        padding: 109px 57px 90px;
+        background-color: $bg-c2-light;
+
+        img {}
+    }
+
+    .productDetail__content {
+        h3 {
+            @include text($text-3xl, $text-light);
+            margin-top: 9px;
+        }
+
+        p:nth-child(2) {
+            @include text($fc: $text-c5-dark);
+            padding-right: 190px;
+            text-align: justify;
+            margin: 0;
+        }
+
+        p:nth-child(3) {
+            @include text($text-24, $text-semibold, $text-c2-primary);
+            margin-bottom: 7px;
+        }
+
+        p.productDetail__price {
+            @include text($text-3xl, $text-semibold, $text-c1-red);
+            margin: 10px 0;
+        }
+
+        .btn--size {
+            background-color: $bg-c3-light;
+            border-radius: 0;
+            @include text($text-24, $text-semibold, $text-c4-dark);
+            width: 50px;
+            height: 50px;
+            padding: 11px 8px 10px 10px;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 21px;
+        }
+
+        .btnGroup--quantity {
+            @include text($text-3xl);
+
+            .btn--quantity {
+                @include text($text-3xl, $text-regular, $text-c2-light);
+                background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+                border-radius: 0;
+                width: 50px;
+                height: 50px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 7px;
+            }
+        }
+
+
+        .btn--addToCart {
+            @include text($text-24, $text-semibold, $text-c3-light);
+            background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
+            border-radius: 0;
+            width: 175px;
+            height: 64px;
+        }
+
+    }
+}
+
+.relatedProduct {
+    background-color: $text-c2-light;
+    padding-top: 16px;
+    margin-bottom: 48px;
+    h1 {
+        @include text($text-4xl);
+        text-align: center;
+    }
+}
