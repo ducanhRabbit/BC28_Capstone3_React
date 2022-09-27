@@ -32,7 +32,7 @@ export default function Header() {
         <div className="container">
           <div className="wrapper d-flex align-items-center justify-center justify-content-between">
             <div className="logo">
-              <Link>
+              <Link to={'/'}>
                 <img src={logo} alt="" />
               </Link>
             </div>
@@ -41,14 +41,14 @@ export default function Header() {
                 <i className="fas fa-search"></i>
                 <span>Search</span>
               </Link>
-              <Link className="d-flex align-items-center justify-center">
+              <Link to={'/cart'} className="d-flex align-items-center justify-center">
                 <i className="fas fa-shopping-cart cart-icon" />
                 <span className="cart-badge ">
                   1
                 </span>
               </Link>
               <Link>Login</Link>
-              <Link>Register</Link>
+              <Link to={'/register'}>Register</Link>
             </div>
           </div>
         </div>
