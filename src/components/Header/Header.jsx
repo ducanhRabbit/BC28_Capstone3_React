@@ -32,9 +32,9 @@ export default function Header() {
         <div className="container">
           <div className="wrapper d-flex align-items-center justify-center justify-content-between">
             <div className="logo">
-              <Link>
+              <NavLink to={"/"}>
                 <img src={logo} alt="" />
-              </Link>
+              </NavLink>
             </div>
             <div className="user-login d-flex align-items-center justify-center gap-4">
               <Link className="d-flex align-items-center justify-center">
