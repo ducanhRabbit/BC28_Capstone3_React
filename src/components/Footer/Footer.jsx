@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
       <div className="copyright">
         <div className="content d-flex justify-content-center align-items-center">
-        <i class="far fa-copyright"></i>
+        <i className="far fa-copyright"></i>
         <span>
           2022 Cybersoft All Rights Reversed | Design Theme by Trương Tấn Khải
         </span>

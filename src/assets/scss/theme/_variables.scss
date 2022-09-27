@@ -8,6 +8,8 @@ $text-3xl: 30px;
 $text-4xl: 40px;
 $text-5xl: 50px;
 $text-6xl: 60px;
+
+$text-24: 24px;
 // font-weight
 $text-light: 300;
 $text-regular: 400;
@@ -15,19 +17,27 @@ $text-semibold: 600;
 $text-bold: 700;
 // text-color
 $text-c1-primary: #F8B653;
+$text-c2-primary: #1ED90E;
 $text-c1-dark: #202020;
 $text-c1-light: #fff;
+$text-c2-light: #FFFCFC;
+$text-c3-light: #f8f8f8;
 $text-c2-dark: rgba(0, 0, 0, .3);
 $text-c3-dark: #e2e2e2;
+$text-c4-dark: #1E1D1D;
+$text-c5-dark: #140101;
 $text-c1-pink: #d46661;
 $text-c2-pink: #c43a33;
 $text-c1-purple: #AE18E2;
+$text-c1-red: #FC0303;
 // ----------------Background----------------
 // bg-color
 $bg-c1-primary: #F8B653;
 $bg-c1-secondary: #dcd1f3;
 $bg-c1-light: #fff;
 $bg-c2-light: #f8f8f8;
+$bg-c3-light: #CCCCCC;
+
 $bg-c1-dark: #000;
 $bg-c2-dark: rgba(0, 0, 0, .3);
 $bg-c3-dark: #e2e2e2;

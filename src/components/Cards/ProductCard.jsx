@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function ProductCard(props) {
     const {product} = props
@@ -13,9 +13,9 @@ export default function ProductCard(props) {
         <p>{product.description}</p>
       </div>
       <div className="card-footer d-flex align-items-center">
-        <Link className="btn-primary-cus">
+        <NavLink className="btn-primary-cus" to={`/detail/${product.id}`}>
           <span>Buy Now</span>
-        </Link>
+        </NavLink>
         <div className="price">
             ${product.price}
         </div>
