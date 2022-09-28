@@ -26,7 +26,7 @@ export default function HomeSlider() {
       let randomIndex = Math.floor(Math.random() * (cloneArr.length - 1));
       let currentItem = cloneArr.splice(randomIndex,1);
       let [product] = currentItem;
-      console.log(product)
+
       let out = (
           <div className="slide-wrap d-flex justify-content-center align-items-center" key={i}>
             <div className="slide-left">

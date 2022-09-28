@@ -14,6 +14,7 @@ const initialState = {
   ],
   productDetail: {},
   arrSearchProduct: [],
+  favProducts: [{id:3},{id:2}]
 };
 
 const productReducer = createSlice({
@@ -31,7 +32,11 @@ const productReducer = createSlice({
 
     setArrSearchProduct: (state,action) => {
         state.arrSearchProduct = action.payload;
+    },
+    setArrFavProducts: (state,action) =>{
+      state.favProducts = action.payload
     }
+    
   },
 });
 
@@ -48,12 +53,10 @@ export const getProductAPI = async (dispatch) => {
       url: "https://shop.cyberlearn.vn/api/Product",
       method: "GET",
     });
-    console.log(result.data.content);
 
     let action = setArrProductAction(result.data.content);
     dispatch(action);
   } catch (err) {
-    console.log(err);
   }
 };
 
@@ -64,7 +67,6 @@ export const getProductDetailApi = (productID) => {
         url: `https://shop.cyberlearn.vn/api/Product/getbyid?id=${productID}`,
         method: "GET",
       });
-      console.log(result.data.content);
       const action = setProductDetailAction(result.data.content);
       dispatch(action);
     } catch (error) {

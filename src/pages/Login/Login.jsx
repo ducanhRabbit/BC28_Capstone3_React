@@ -3,6 +3,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import LoginFacebook from "../../components/LoginFacebook/LoginFacebook";
 import { signInAPI } from "../../redux/reducers/userReducer";
 
 export default function Login() {
@@ -83,6 +84,7 @@ export default function Login() {
             <Link className="register" to={"/register"}>
               Register now ?
             </Link>
+            <LoginFacebook></LoginFacebook>
           </div>
         </div>
       </div>
