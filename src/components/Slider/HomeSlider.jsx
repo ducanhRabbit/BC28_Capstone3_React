@@ -49,7 +49,7 @@ export default function HomeSlider() {
 
                   
                   <span>Buy Now</span>
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>

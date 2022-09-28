@@ -44,6 +44,7 @@ export default function Register() {
           method: "POST",
           data: values,
         });
+        alert(result.data.message)
       } catch (err) {
         alert(err.response.data.message);
       }
@@ -171,6 +172,7 @@ export default function Register() {
                 name="gender"
                 type="radio"
                 value={true}
+                defaultChecked
                 onChange={formik.handleChange}
               />
               <span className="checkmark"></span>
