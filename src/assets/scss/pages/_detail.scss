@@ -7,7 +7,9 @@
         padding: 109px 57px 90px;
         background-color: $bg-c2-light;
 
-        img {}
+        img {
+            object-fit: cover
+        }
     }
 
     .productDetail__content {

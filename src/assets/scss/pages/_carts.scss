@@ -1,0 +1,91 @@
+.carts {
+  min-height: 50vh;
+  h3 {
+    font-weight: 600;
+    font-size: $text-3xl;
+  }
+  .table {
+    
+    thead {
+      th {
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          text-align: center;
+          vertical-align: middle;
+          
+          img {
+          }
+          .wrap{
+              .increase-btn{
+                height: 30px;
+                padding: 0 10px;
+                background-color: $bg-c1-purple;
+                border-radius: 20px 0 0 20px;
+                border: none;
+                svg{
+                    color: $text-c2-light;
+                }
+              }
+              .decrease-btn{
+                line-height: 30px;
+                padding: 0 10px;
+                background-color: $bg-c1-purple;
+                border-radius: 0 20px 20px 0;
+                border: none;
+                svg{
+                    color: $text-c2-light;
+                }
+              }
+              .quantity{
+                display: inline-block;
+                line-height: 30px;
+                font-size: $text-xl;
+                font-weight: 500;
+                padding: 0 20px;   
+                background-color:  $bg-c5-dark;
+              }
+          }
+          .delete-btn{
+            border: none;
+            padding: 8px;
+            background-color: transparent;
+            svg{
+                font-size: $text-2xl;
+            }
+            svg:hover{
+                color: $text-c2-red;
+            }
+          }
+        }
+        .name-item{
+            text-align: left;
+        }
+
+      }
+    }
+  }
+  .subtotal{
+    font-size: $text-2xl;
+    font-weight: 500;
+    span{
+      color: $text-c2-red;
+      font-size: $text-3xl;
+      font-weight: 600;
+    }
+  }
+  .submit-order{
+    button{
+      border: none;
+      background-color: $bg-c1-purple;
+      color: $text-c1-light;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+  }
+}

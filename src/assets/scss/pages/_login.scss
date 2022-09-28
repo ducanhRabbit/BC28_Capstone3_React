@@ -1,0 +1,56 @@
+.login {
+  h3 {
+  }
+  .wrap-form {
+    .form-content {
+      background-color: $bg-c4-light;
+      min-height: 50vh;
+      width: 400px;
+      padding: 20px 10px;
+      border-radius: 4px;
+      form {
+        .form-group {
+            margin-bottom: 20px;
+          .login-label {
+            color: $text-c1-dark;
+            display: block;
+            font-size: $text-xl;
+            font-weight: 500;
+          }
+          .login-input {
+            background: $bg-c3-dark;
+            width: 100%;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            &:focus {
+              outline: #4b4b4b auto 1px;
+            }
+          }
+        }
+      }
+      .login-btn {
+        text-align: end;
+        button {
+          border: none;
+          background-color: $bg-c1-purple;
+          color: $text-c1-light;
+          padding: 8px 12px;
+          border-radius: 12px;
+          font-weight: 500;
+          font-size: $text-xl;
+          &:hover {
+            background-color: #7a4495;
+          }
+        }
+      }
+      .register {
+        display: block;
+        text-align: center;
+        &:hover {
+          color: #7a4495;
+        }
+      }
+    }
+  }
+}

@@ -42,7 +42,7 @@ export default function HomeSlider() {
                 <p>
                   {product?.shortDescription}
                 </p>
-                <Link className="btn-primary-cus">
+                <Link to={`/detail/${product?.id}`} className="btn-primary-cus">
                   
                   <span>Buy Now</span>
                 </Link>

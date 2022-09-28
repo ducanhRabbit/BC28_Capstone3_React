@@ -11,11 +11,14 @@ export default function Detail() {
   const { productDetail } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
   const params = useParams();
+  console.log(params);
 
   const getProductDetail = () => {
     const actionThunk = getProductDetailApi(params.id);
     dispatch(actionThunk);
   };
+
+  
 
   useEffect(() => {
     getProductDetail();

@@ -1,8 +1,12 @@
 import React from "react";
 import logo from "../../assets/img/logo_1.png";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getStore, getStoreJSON, USER_LOGIN } from "../../util/config";
 
 export default function Header() {
+  const user = useSelector(state => state.userReducer.userLogin)
+  const {totalAmount} = useSelector(state => state.cartReducer);
   const navLinks = [
     {
       title: "Home",
@@ -44,10 +48,18 @@ export default function Header() {
               <Link to={'/cart'} className="d-flex align-items-center justify-center">
                 <i className="fas fa-shopping-cart cart-icon" />
                 <span className="cart-badge ">
-                  1
+                  {totalAmount}
                 </span>
               </Link>
-              <Link>Login</Link>
+              {
+                user?(
+                  <Link to={'/profile'}>
+                    Hello, {user.email}!
+                  </Link>
+                ) : (
+                  <Link to={'/login'}>Login</Link>
+                )
+              }
               <Link to={'/register'}>Register</Link>
             </div>
           </div>

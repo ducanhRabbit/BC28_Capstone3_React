@@ -37,14 +37,15 @@ export default function Register() {
     }),
     onSubmit: async (values) => {
       try {
+        const booleanParse = values.gender === "true";
+        values.gender = booleanParse;
         let result = await axios({
           url: "https://shop.cyberlearn.vn/api/Users/signup",
           method: "POST",
           data: values,
         });
-        console.log(result.data.content);
       } catch (err) {
-        console.log(err.response.data.message)
+        alert(err.response.data.message);
       }
     },
   });
@@ -162,25 +163,28 @@ export default function Register() {
           <div className="form-group mb-3">
             <div className="gender-title my-2">Gender</div>
 
-            <label className="gender-label me-2" htmlFor="">
+            <label className="gender-label me-2" htmlFor="male">
               Male
               <input
                 className="gender-input me-1"
+                id="male"
                 name="gender"
-                defaultChecked
                 type="radio"
                 value={true}
+                onChange={formik.handleChange}
               />
               <span className="checkmark"></span>
             </label>
 
-            <label className="gender-label" htmlFor="">
+            <label className="gender-label" htmlFor="female">
               Female
               <input
+                id="female"
                 className="gender-input me-1"
                 name="gender"
                 type="radio"
                 value={false}
+                onChange={formik.handleChange}
               />
               <span className="checkmark"></span>
             </label>
