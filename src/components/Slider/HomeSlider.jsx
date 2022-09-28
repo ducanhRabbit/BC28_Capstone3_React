@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import { getProductAPI } from "../../redux/reducers/productReducer";
 
@@ -52,7 +52,6 @@ export default function HomeSlider() {
       );
       jsx.push(out);
     }
-    console.log(jsx);
 
     return jsx;
   };

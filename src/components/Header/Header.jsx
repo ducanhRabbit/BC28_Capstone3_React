@@ -41,7 +41,7 @@ export default function Header() {
               </NavLink>
             </div>
             <div className="user-login d-flex align-items-center justify-center gap-4">
-              <Link className="d-flex align-items-center justify-center">
+              <Link className="d-flex align-items-center justify-center" to={"/search"}>
                 <i className="fas fa-search"></i>
                 <span>Search</span>
               </Link>
