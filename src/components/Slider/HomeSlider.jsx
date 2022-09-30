@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import { getProductAPI } from "../../redux/reducers/productReducer";
 
@@ -42,10 +42,10 @@ export default function HomeSlider() {
                 <p>
                   {product?.shortDescription}
                 </p>
-                <Link className="btn-primary-cus">
+                <NavLink className="btn-primary-cus" to={`/detail/${product?.id}`}>
                   
                   <span>Buy Now</span>
-                </Link>
+                </NavLink>
               </div>
             </div>
           </div>
