@@ -13,6 +13,7 @@ const initialState = {
     },
   ],
   productDetail: {},
+  arrSearchProduct: [],
 };
 
 const productReducer = createSlice({
@@ -27,10 +28,14 @@ const productReducer = createSlice({
     setProductDetailAction: (state, action) => {
       state.productDetail = action.payload;
     },
+
+    setArrSearchProduct: (state,action) => {
+        state.arrSearchProduct = action.payload;
+    }
   },
 });
 
-export const { setArrProductAction, setProductDetailAction } =
+export const { setArrProductAction, setProductDetailAction, setArrSearchProduct } =
   productReducer.actions;
 
 export default productReducer.reducer;
@@ -63,7 +68,23 @@ export const getProductDetailApi = (productID) => {
       const action = setProductDetailAction(result.data.content);
       dispatch(action);
     } catch (error) {
-        console.log(error)
+      console.log(error);
+    }
+  };
+};
+
+export const getSearchProductApi = (keyword) => {
+  return async (dispatch) => {
+    try {
+      const result = await axios({
+        url: "https://shop.cyberlearn.vn/api/Product?keyword=" + keyword,
+        method: "GET",
+      });
+      console.log(result.data.content);
+      const action = setArrSearchProduct(result.data.content);
+      dispatch(action);
+    } catch (error) {
+      console.log(error);
     }
   };
 };
