@@ -1,0 +1,110 @@
+.search {
+    .search__form {
+        padding-top: 68px;
+        padding-bottom: 44px;
+
+        .form-group {
+            p {
+                @include text($text-xl, 500, rgba(0, 0, 0, 0.6));
+                margin-bottom: 5px;
+                margin-left: 11px;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .searchInput {
+                width: 443px;
+                height: 54px;
+                border: none;
+                outline: none;
+                padding-left: 14px;
+                background: rgba(33, 33, 33, 0.08);
+                border-radius: 4px 4px 0 0;
+                margin-right: 37px;
+                margin-left: 4px;
+            }
+
+            .searchInput::placeholder {
+                color: #000;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            .searchButton {
+                width: 121px;
+                height: 48px;
+                border: none;
+                outline: none;
+                background-color: #6200EE;
+                @include text(14px, 500, $text-c1-light);
+                border-radius: 50px;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.6);
+                font-family: 'Roboto', sans-serif;
+
+            }
+        }
+    }
+
+    h1 {
+        @include text($text-4xl, $text-regular, $text-c1-light);
+        background: linear-gradient(180deg, #F21299 0%, #1B02B5 100%);
+        padding: 12px 29px;
+        margin-bottom: 27px;
+    }
+
+    .search__content {
+        margin-bottom: 48px;
+        p.title {
+            @include text($text-xl, 500, rgba(0, 0, 0, 0.6));
+            margin-bottom: 5px;
+            margin-left: 65px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .button__sort {
+            margin-bottom: 4px;
+
+            .search__content-filter {
+                width: 443px;
+                height: 54px;
+                // border: none;
+                outline: none;
+                padding-left: 14px;
+                background: rgba(33, 33, 33, 0.08);
+                border-radius: 4px 4px 0 0;
+                display: flex;
+                margin-left: 58px;
+                align-items: center;
+                justify-content: flex-start;
+                font-family: 'Roboto', sans-serif;
+                position: relative;
+
+                .sort__desc {
+                    width: 0;
+                    height: 0;
+                    border-top: 15px solid black;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 11px;
+
+                }
+
+                .sort__asc {
+                    width: 0;
+                    height: 0;
+                    border-bottom: 15px solid black;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 11px;
+                }
+            }
+
+
+        }
+
+    }
+}

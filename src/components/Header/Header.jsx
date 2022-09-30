@@ -41,16 +41,19 @@ export default function Header() {
               </NavLink>
             </div>
             <div className="user-login d-flex align-items-center justify-center gap-4">
-              <Link className="d-flex align-items-center justify-center">
+              <NavLink className="d-flex align-items-center justify-center" to={"/search"}>
                 <i className="fas fa-search"></i>
                 <span>Search</span>
+
               </Link>
               <Link to={'/cart'} className="d-flex align-items-center justify-center">
+
                 <i className="fas fa-shopping-cart cart-icon" />
                 <span className="cart-badge ">
                   {totalAmount}
                 </span>
               </Link>
+
               {
                 user?(
                   <Link to={'/profile'}>
@@ -61,6 +64,7 @@ export default function Header() {
                 )
               }
               <Link to={'/register'}>Register</Link>
+
             </div>
           </div>
         </div>
