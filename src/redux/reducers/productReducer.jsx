@@ -14,7 +14,9 @@ const initialState = {
   ],
   productDetail: {},
   arrSearchProduct: [],
+
   favProducts: [{id:3},{id:2}]
+
 };
 
 const productReducer = createSlice({
@@ -32,11 +34,13 @@ const productReducer = createSlice({
 
     setArrSearchProduct: (state,action) => {
         state.arrSearchProduct = action.payload;
+
     },
     setArrFavProducts: (state,action) =>{
       state.favProducts = action.payload
     }
     
+
   },
 });
 
