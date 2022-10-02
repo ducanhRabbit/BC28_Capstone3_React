@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+
+import { Link, NavLink } from "react-router-dom";
+
 import Slider from "react-slick";
 import { getProductAPI } from "../../redux/reducers/productReducer";
 
@@ -26,7 +28,7 @@ export default function HomeSlider() {
       let randomIndex = Math.floor(Math.random() * (cloneArr.length - 1));
       let currentItem = cloneArr.splice(randomIndex,1);
       let [product] = currentItem;
-      console.log(product)
+
       let out = (
           <div className="slide-wrap d-flex justify-content-center align-items-center" key={i}>
             <div className="slide-left">
@@ -54,7 +56,6 @@ export default function HomeSlider() {
       );
       jsx.push(out);
     }
-    console.log(jsx);
 
     return jsx;
   };

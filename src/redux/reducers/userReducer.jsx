@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ACCESS_TOKEN, setStore, setStoreJSON, USER_LOGIN } from '../../util/config';
-
+import { history } from "../../index";
 const initialState = {
     userLogin: localStorage.getItem(USER_LOGIN)? JSON.parse(localStorage.getItem(USER_LOGIN)):null
 }
@@ -38,27 +38,11 @@ export const signInAPI = (userLogin)=>{
       const action = setUserLoginAction(result.data.content);
       dispatch(action);
       alert(result.data.message)
+      history.push('/')
  
     }
     catch(err){
       alert(err.response.data.message)
     }
   }
-}
-
-export const postOderAPI = async (order)=>{
-  try{
-    const result = await axios({
-      url: 'https://shop.cyberlearn.vn/api/Users/order',
-      method: 'POST',
-      data: order,
-    })
-
-    console.log(result)
-
-  }
-  catch(err){
-    console.log(err);
-  }
-
 }
