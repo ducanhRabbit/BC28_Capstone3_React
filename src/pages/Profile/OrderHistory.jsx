@@ -2,10 +2,10 @@ import React from "react";
 import moment from "moment";
 
 export default function OrderHistory(props) {
-  const { ordersHistory } = props.userLogin;
+  const { userLogin } = props ;
   return (
     <div className="orderHistory">
-      {ordersHistory?.map((order, index) => {
+      {userLogin?.ordersHistory?.map((order, index) => {
         return (
           <div key={index}>
             <p>
@@ -27,7 +27,7 @@ export default function OrderHistory(props) {
                 {order.orderDetail?.map((detail, index) => {
                   return (
                     <tr key={index}>
-                      <td>{index + 1}</td>
+                      <td>{order.id}</td>
                       <td>
                         <img
                           src={detail.image}
@@ -41,7 +41,7 @@ export default function OrderHistory(props) {
                       <td>
                         <span>{detail.quantity}</span>
                       </td>
-                      <td>1000</td>
+                      <td>{detail.quantity * detail.price}</td>
                     </tr>
                   );
                 })}

@@ -16,6 +16,7 @@ export default function Carts() {
       navigate('/login')
     }
   },[])
+  console.log([...cartList]);
 
   const renderCartList = () => {
     return cartList.map((item, index) => {
@@ -114,8 +115,9 @@ export default function Carts() {
             </div>
             <div className="submit-order">
               <button onClick={()=>{
+                let order = cartList.map((item,index)=> ({...item,productId:item.id}));
                 postOderAPI({
-                  oderDetaild: cartList,
+                  orderDetail: order, 
                   email: userLogin?.email
                 })
               }}>Oder Now</button>

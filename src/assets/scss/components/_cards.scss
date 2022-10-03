@@ -6,10 +6,30 @@
   box-shadow: 0 0 5px #ced2cc;
   .card-img {
     text-align: center;
+    position: relative;
     img {
       width: 100%;
       object-fit: cover;
       object-position: center;
+    }
+    .like-btn{
+      position: absolute;
+      top: 10%;
+      right: 0;
+      width: 50px;
+      cursor: pointer;
+      .heart-icon{
+        font-size: $text-2xl;
+      }
+      .like-switch{
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .like-switch:checked ~ svg{
+        color: red;
+      }  
+      
     }
   }
   .card-body {

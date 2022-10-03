@@ -3,13 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {
   ACCESS_TOKEN,
-  getStore,
-  getStoreJSON,
   setStore,
   setStoreJSON,
+  getStore,
+  getStoreJSON,
   USER_LOGIN,
 } from "../../util/config";
-
+import { history } from "../../index";
 const initialState = {
   userLogin: getStoreJSON(USER_LOGIN),
 };
@@ -45,12 +45,12 @@ export const signInAPI = (userLogin) => {
       const action = setUserLoginAction(result.data.content);
       dispatch(action);
       alert(result.data.message);
+      history.push("/");
     } catch (err) {
       alert(err.response.data.message);
     }
   };
 };
-
 export const postOderAPI = async (order) => {
   try {
     const result = await axios({
@@ -80,4 +80,22 @@ export const getProfileApi = async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const updateProfileApi = (userLoginUpdate) => {
+  return async (dispatch) => {
+    try {
+      const result = await axios({
+        url: "https://shop.cyberlearn.vn/api/Users/updateProfile",
+        method: "POST",
+        data: userLoginUpdate,
+        headers: {
+          Authorization: `Bearer ${getStore(ACCESS_TOKEN)}`,
+        },
+      });
+      console.log(result.data.content);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 };
