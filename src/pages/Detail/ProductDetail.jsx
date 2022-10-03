@@ -36,7 +36,7 @@ export default function ProductDetail(props) {
         <button className="btn btn--addToCart" onClick={()=>{
           const action = addToCart({
             ...props.productDetail,
-            quantity: quantity
+            quantity: quantity,
           });
           dispatch(action)
           

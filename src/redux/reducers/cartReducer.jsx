@@ -21,7 +21,7 @@ const cartReducer = createSlice({
             state.cartList.push({
                 ...newItem,
                 // quantity:1,
-                totalPrice:newItem.price,
+                totalPrice:newItem.price * newItem.quantity,
             })
         }else{
             existingItem.quantity+= newItem.quantity;
