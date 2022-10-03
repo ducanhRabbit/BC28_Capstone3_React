@@ -16,28 +16,30 @@ import Detail from './pages/Detail/Detail';
 import { Provider } from 'react-redux';
 import { store } from './redux/configStore';
 
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import OrderHistory from './pages/Profile/OrderHistory';
+import FavoriteProduct from './pages/Profile/FavoriteProduct';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-  <BrowserRouter>
-    <Routes>
-      <Route path='' element={<HomeTemplate/>}>
-        <Route index element={<Home/>}></Route>
-        <Route path='register' element={<Register/>}></Route>
-        <Route path='login' element={<Login/>}></Route>
-        <Route path='cart' element={<Carts/>}></Route>
-        <Route path='profile' element={<Profile/>}></Route>
-        <Route path='search' element={<Search/>}></Route>
-        <Route path='detail'>
-          <Route path=':id' element={<Detail/>}></Route>
+    <BrowserRouter>
+      <Routes>
+        <Route path='' element={<HomeTemplate />}>
+          <Route index element={<Home />}></Route>
+          <Route path='register' element={<Register />}></Route>
+          <Route path='login' element={<Login />}></Route>
+          <Route path='cart' element={<Carts />}></Route>
+          <Route path='profile' element={<Profile />}></Route>
+          <Route path='search' element={<Search />}></Route>
+          <Route path='detail'>
+            <Route path=':id' element={<Detail />}></Route>
+          </Route>
+          <Route path='*' element={<Navigate to={''} />}></Route>
         </Route>
-        <Route path='*' element={<Navigate to={''}/>}></Route>
-      </Route>
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   </Provider>
 );
 
