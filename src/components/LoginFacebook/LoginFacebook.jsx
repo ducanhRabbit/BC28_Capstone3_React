@@ -14,7 +14,7 @@ export default function LoginFacebook() {
   const dispatch = useDispatch();
   const responseFacebook = async (response) => {
     try {
-      console.log(response);
+      
       let result = await axios({
         url: "https://shop.cyberlearn.vn/api/Users/facebooklogin",
         method: "POST",
@@ -23,9 +23,10 @@ export default function LoginFacebook() {
         },
       });
 
-      let action = setUserLoginAction(response);
+      let action = setUserLoginAction(result.data.content);
       dispatch(action);
-      setStoreJSON(USER_LOGIN, response);
+      setStoreJSON(USER_LOGIN, result.data.content);
+
 
       setStore(ACCESS_TOKEN, result.data.content.accessToken);
       history.push("/");
@@ -36,7 +37,7 @@ export default function LoginFacebook() {
 
   return (
     <FacebookLogin
-      appId="620180026431046"
+      appId="660859068593690"
       fields="name,email,picture"
       render={(renderProps) => (
         <button
