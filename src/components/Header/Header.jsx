@@ -1,12 +1,21 @@
 import React from "react";
 import logo from "../../assets/img/logo_1.png";
-import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { getStore, getStoreJSON, USER_LOGIN } from "../../util/config";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  ACCESS_TOKEN,
+  clearLocalStorage,
+  getStore,
+  getStoreJSON,
+  USER_LOGIN,
+} from "../../util/config";
+import { setUserLoginAction } from "../../redux/reducers/userReducer";
 
 export default function Header() {
-  const user = useSelector(state => state.userReducer.userLogin)
-  const {totalAmount} = useSelector(state => state.cartReducer);
+  const user = useSelector((state) => state.userReducer.userLogin);
+  const { totalAmount } = useSelector((state) => state.cartReducer);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const navLinks = [
     {
       title: "Home",
@@ -41,32 +50,40 @@ export default function Header() {
               </NavLink>
             </div>
             <div className="user-login d-flex align-items-center justify-center gap-4">
-
-              <NavLink className="d-flex align-items-center justify-center" to={"/search"}>
-
+              <NavLink
+                className="d-flex align-items-center justify-center"
+                to={"/search"}
+              >
                 <i className="fas fa-search"></i>
                 <span>Search</span>
-
               </NavLink>
-              <Link to={'/cart'} className="d-flex align-items-center justify-center">
-
+              <Link
+                to={"/cart"}
+                className="d-flex align-items-center justify-center"
+              >
                 <i className="fas fa-shopping-cart cart-icon" />
-                <span className="cart-badge ">
-                  {totalAmount}
-                </span>
+                <span className="cart-badge ">{totalAmount}</span>
               </Link>
 
-              {
-                user?(
-                  <Link to={'/profile'}>
-                    Hello, {user.email}!
-                  </Link>
-                ) : (
-                  <Link to={'/login'}>Login</Link>
-                )
-              }
-              <Link to={'/register'}>Register</Link>
-
+              {user ? (
+                <Link to={"/profile"}>Hello, {user.email}!</Link>
+              ) : (
+                <Link to={"/login"}>Login</Link>
+              )}
+              {user ? (
+                <Link to={"/login"}
+                  onClick={() => {
+                    clearLocalStorage(USER_LOGIN);
+                    clearLocalStorage(ACCESS_TOKEN);
+                    const action = setUserLoginAction(null);
+                    dispatch(action);
+                  }}
+                >
+                  Logout
+                </Link>
+              ) : (
+                <Link to={"/register"}>Register</Link>
+              )}
             </div>
           </div>
         </div>

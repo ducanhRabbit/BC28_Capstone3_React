@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/reducers/cartReducer";
 export default function ProductDetail(props) {
   const { image, name, description, size, price } = props.productDetail;
-  let [quantity,setQuantity] = useState(1);
+  let [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
   return (
@@ -26,21 +26,40 @@ export default function ProductDetail(props) {
         })}
         <p className="productDetail__price">{price}$</p>
         <div className="btnGroup--quantity">
-          <button className="btn btn--quantity me-3" onClick={()=>{setQuantity(quantity+1)}}>+</button>{quantity}
-          <button className="btn btn--quantity ms-3" onClick={()=>{
-            if(quantity>1){
-              setQuantity(quantity-1)
-            }
-          }}>-</button>
+          <button
+            className="btn btn--quantity me-3"
+            onClick={() => {
+              setQuantity(quantity + 1);
+            }}
+          >
+            +
+          </button>
+          {quantity}
+          <button
+            className="btn btn--quantity ms-3"
+            onClick={() => {
+              if (quantity > 1) {
+                setQuantity(quantity - 1);
+              }
+            }}
+          >
+            -
+          </button>
         </div>
-        <button className="btn btn--addToCart" onClick={()=>{
-          const action = addToCart({
-            ...props.productDetail,
-            quantity: quantity,
-          });
-          dispatch(action)
-          
-        }}>Add to cart</button>
+
+        <button
+          className="btn btn--addToCart"
+          onClick={() => {
+            const action = addToCart({
+              ...props.productDetail,
+              quantity: quantity,
+            });
+            dispatch(action);
+          }}
+        >
+          Add to cart
+        </button>
+
       </div>
     </div>
   );

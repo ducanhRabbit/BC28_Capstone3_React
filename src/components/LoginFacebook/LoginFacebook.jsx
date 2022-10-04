@@ -27,7 +27,7 @@ export default function LoginFacebook() {
       dispatch(action);
       setStoreJSON(USER_LOGIN, response);
 
-      setStore(ACCESS_TOKEN, response.accessToken);
+      setStore(ACCESS_TOKEN, result.data.content.accessToken);
       history.push("/");
     } catch (err) {
       console.log(err);
@@ -36,14 +36,14 @@ export default function LoginFacebook() {
 
   return (
     <FacebookLogin
-      appId="660859068593690"
+      appId="620180026431046"
       fields="name,email,picture"
       render={(renderProps) => (
         <button
           className="facebook-login-btn mt-3"
           onClick={renderProps.onClick}
         >
-          <i class="fab fa-facebook-f"></i>
+          <i className="fab fa-facebook-f"></i>
           <span>Continue with Facebook</span>
         </button>
       )}
