@@ -11,6 +11,7 @@ const cartReducer = createSlice({
   name: "cartReducer",
   initialState,
   reducers: {
+
     addToCart: (state, action) => {
       const newItem = action.payload;
 
@@ -36,6 +37,7 @@ const cartReducer = createSlice({
       state.totalAmount = state.cartList.reduce((total, item) => {
         return total + item.quantity;
       }, 0);
+
     },
     removeFromCart: (state, action) => {
       const { id } = action.payload;

@@ -46,6 +46,7 @@ export default function ProductDetail(props) {
             -
           </button>
         </div>
+
         <button
           className="btn btn--addToCart"
           onClick={() => {
@@ -58,6 +59,7 @@ export default function ProductDetail(props) {
         >
           Add to cart
         </button>
+
       </div>
     </div>
   );

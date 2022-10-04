@@ -9,7 +9,8 @@ export default function Features() {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        getProductAPI();
+        let actionThunk = getProductAPI;
+        dispatch(actionThunk)
     },[])
   return (
     <div className='my-5 feature'>

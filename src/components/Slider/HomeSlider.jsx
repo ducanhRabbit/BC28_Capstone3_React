@@ -43,12 +43,14 @@ export default function HomeSlider() {
               <h3>{product?.name}</h3>
               <p>{product?.shortDescription}</p>
 
+
               <NavLink
                 to={`/detail/${product?.id}`}
                 className="btn-primary-cus"
               >
                 <span>Buy Now</span>
               </NavLink>
+
             </div>
           </div>
         </div>
