@@ -2,20 +2,24 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addToCart, postOderAPI, removeFromCart } from "../../redux/reducers/cartReducer";
+import {
+  addToCart,
+  postOderAPI,
+  removeFromCart,
+} from "../../redux/reducers/cartReducer";
 import { ACCESS_TOKEN, getStore } from "../../util/config";
 
 export default function Carts() {
   const navigate = useNavigate();
   const { cartList, totalBill } = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userReducer.userLogin)
-  useEffect(() =>{
-    if(!getStore(ACCESS_TOKEN)){
-      alert('Please log in!')
-      navigate('/login')
+  const userLogin = useSelector((state) => state.userReducer.userLogin);
+  useEffect(() => {
+    if (!getStore(ACCESS_TOKEN)) {
+      alert("Please log in!");
+      navigate("/login");
     }
-  },[])
+  }, []);
   console.log([...cartList]);
 
   const renderCartList = () => {
@@ -43,7 +47,7 @@ export default function Carts() {
                   dispatch(action);
                 }}
               >
-                <i class="fas fa-plus"></i>
+                <i className="fas fa-plus"></i>
               </button>
               <span className="quantity">{item.quantity}</span>
               <button
@@ -58,7 +62,7 @@ export default function Carts() {
                   }
                 }}
               >
-                <i class="fas fa-minus"></i>
+                <i className="fas fa-minus"></i>
               </button>
             </div>
           </td>
@@ -73,7 +77,7 @@ export default function Carts() {
                 dispatch(action);
               }}
             >
-              <i class="fas fa-trash"></i>
+              <i className="fas fa-trash"></i>
             </button>
           </td>
         </tr>
@@ -114,13 +118,22 @@ export default function Carts() {
               Subtotal: <span>${totalBill}</span>
             </div>
             <div className="submit-order">
-              <button onClick={()=>{
-                let order = cartList.map((item,index)=> ({...item,productId:item.id}));
-                postOderAPI({
-                  orderDetail: order, 
-                  email: userLogin?.email
-                })
-              }}>Oder Now</button>
+              <button
+                onClick={() => {
+                  let order = cartList.map((item, index) => ({
+                    ...item,
+                    productId: item.id,
+                  }));
+                  postOderAPI({
+                    orderDetail: order,
+                    email: userLogin?.email,
+                  },dispatch).then((result) => {
+                    navigate("/");
+                  });
+                }}
+              >
+                Order Now
+              </button>
             </div>
           </div>
         </>
