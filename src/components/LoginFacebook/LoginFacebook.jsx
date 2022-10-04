@@ -43,7 +43,7 @@ export default function LoginFacebook() {
           className="facebook-login-btn mt-3"
           onClick={renderProps.onClick}
         >
-          <i class="fab fa-facebook-f"></i>
+          <i className="fab fa-facebook-f"></i>
           <span>Continue with Facebook</span>
         </button>
       )}
